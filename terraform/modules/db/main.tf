@@ -30,6 +30,8 @@ resource "google_compute_firewall" "firewall_mongo" {
     ports    = ["27017"]
   }
 
+  source_ranges = ["0.0.0.0/0"]
+
   target_tags = ["reddit-db"]
   source_tags = ["reddit-app"]
 }
